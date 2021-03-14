@@ -1,0 +1,22 @@
+.foot {
+    margin-top: 50px;
+}
+
+.foot-contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+
+    background-color: #24272b;
+    margin-top: -10px;
+    height: 10rem;
+}
+
+.foot-name {
+    margin-top: 20px;
+    line-height: 175%;
+    text-align: center;
+    color: white;
+    letter-spacing: 5px;
+}
