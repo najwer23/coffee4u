@@ -7,7 +7,7 @@ Website about coffee &lt;3
 
 ## Instalation
 ```
-git clone https://github.com/najwer23/najwer23.github.io.git
+git clone https://github.com/najwer23/coffee2U.git
 ```
 ## Run in folder client/
 ```
