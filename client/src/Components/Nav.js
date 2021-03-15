@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faMugHot } from '@fortawesome/free-solid-svg-icons'
+import React, { Component } from 'react';
 import '../CSS/Nav.css';
 
 const objMenuLinks = {
@@ -9,25 +10,22 @@ const objMenuLinks = {
     '/gallery': 'Gallery'
 }
 
-window.onload = function () {
-    const hamburgerBtn = document.querySelector('.hamburger-button');
-    const menuMobile = document.querySelector('.menu-mobile');
-
-    function menuMobileClick() {
-        hamburgerBtn.classList.toggle('hamburger-active');
-        hamburgerBtn.setAttribute('aria-expanded', hamburgerBtn.classList.contains('hamburger-active'));
-        menuMobile.classList.toggle('menu-mobile-active');
-        document.body.classList.toggle('scroll');
-
-        // TODO later
-        // all links on website should has class link
-        let arrayLinks = document.getElementsByClassName('link');
-        for (let i = 0; i < arrayLinks.length; i++) {
-            arrayLinks[i].classList.toggle('hideLink');
-        }
+class Hamburger extends Component {
+    constructor(props) {
+        super(props);
     }
 
-    function menuMobileHide() {
+    componentDidMount() {
+        window.addEventListener("resize", this.menuMobileHide);
+    }
+    componentWillUnmount() {
+        window.addEventListener("resize", null);
+    }
+
+    menuMobileHide() {
+        const hamburgerBtn = document.querySelector('.hamburger-button');
+        const menuMobile = document.querySelector('.menu-mobile');
+        
         if (window.innerWidth > 1000) {
             document.body.classList.remove("scroll");
             hamburgerBtn.classList.remove("hamburger-active");
@@ -36,31 +34,38 @@ window.onload = function () {
         }
     }
 
-    window.addEventListener("resize", menuMobileHide);
-    hamburgerBtn.addEventListener('click', menuMobileClick);
+    menuMobileClick() {
+        const hamburgerBtn = document.querySelector('.hamburger-button');
+        const menuMobile = document.querySelector('.menu-mobile');
+
+        hamburgerBtn.classList.toggle('hamburger-active');
+        hamburgerBtn.setAttribute('aria-expanded', hamburgerBtn.classList.contains('hamburger-active'));
+        menuMobile.classList.toggle('menu-mobile-active');
+        document.body.classList.toggle('scroll');
+    }
+
+    render() {
+        return (
+            <div className="hamburger">
+                <button className="hamburger-button" onClick={this.menuMobileClick} aria-expanded="false">
+                    <span className="screen-read-only">Otwórz / Zamknij Menu</span>
+                    <span className="hamburger-box">
+                        <span className="hamburger-box-line"></span>
+                    </span>
+                </button>
+            </div>
+        )
+    }
 }
 
 function MobileMenu() {
     return (
-        <div class="menu-mobile">
-            <ul class="menuLinks">
+        <div className="menu-mobile">
+            <ul className="menuLinks">
                 {Object.keys(objMenuLinks).map((v, i) => (
                     <li key={i}><a href={v}>{objMenuLinks[v]}</a></li>
                 ))}
             </ul>
-        </div>
-    )
-}
-
-function Hamburger() {
-    return (
-        <div class="hamburger">
-            <button class="hamburger-button" aria-expanded="false">
-                <span class="screen-read-only">Otwórz / Zamknij Menu</span>
-                <span class="hamburger-box">
-                    <span class="hamburger-box-line"></span>
-                </span>
-            </button>
         </div>
     )
 }
