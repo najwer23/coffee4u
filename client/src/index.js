@@ -9,7 +9,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Nav />
   </React.StrictMode>,
-  document.querySelector('#mainNav')
+  document.querySelector('nav')
 );
 
 ReactDOM.render(
