@@ -2,21 +2,80 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faMugHot } from '@fortawesome/free-solid-svg-icons'
 import '../CSS/Nav.css';
 
-function Nav() {
-    const objHashLinks = {
-        '/': <FontAwesomeIcon icon={faHome} size="lg"/>,
-        '/menu': 'Menu',
-        '/contact': 'Contact',
-        '/gallery': 'Gallery'
+const objMenuLinks = {
+    '/': 'Home',
+    '/menu': 'Drinks',
+    '/contact': 'Contact',
+    '/gallery': 'Gallery'
+}
+  
+window.onload = function () {
+    const hamburgerBtn = document.querySelector('.hamburger-button');
+    const menuMobile = document.querySelector('.menu-mobile');
+
+    function menuMobileClick() {
+        hamburgerBtn.classList.toggle('hamburger-active');
+        hamburgerBtn.setAttribute('aria-expanded', hamburgerBtn.classList.contains('hamburger-active'));
+        menuMobile.classList.toggle('menu-mobile-active');
+        document.body.classList.toggle('scroll');
+        
+        // TODO later
+        // all links on website should has class link
+        let arrayLinks = document.getElementsByClassName('link');
+        for (let i = 0; i < arrayLinks.length; i++) {
+            arrayLinks[i].classList.toggle('hideLink');
+        }     
     }
+
+    function menuMobileHide() {
+        if (window.innerWidth > 1000) {
+            document.body.classList.remove("scroll");
+            hamburgerBtn.classList.remove("hamburger-active");
+            menuMobile.classList.remove('menu-mobile-active');
+            hamburgerBtn.setAttribute('aria-expanded', hamburgerBtn.classList.contains('hamburger-active'));
+        }
+    }
+
+    window.addEventListener("resize", menuMobileHide);
+    hamburgerBtn.addEventListener('click', menuMobileClick);
+}
+
+function MobileMenu() {
     return (
-        <section>
+        <div class="menu-mobile">
+            <ul class="menuLinks">
+                {Object.keys(objMenuLinks).map((v,i)=>(
+                    <li key={i}><a href={v}>{objMenuLinks[v]}</a></li>
+                ))}  
+            </ul>
+        </div>
+    )
+}
+
+function Hamburger() {
+    return (
+        <div class="hamburger">
+            <button class="hamburger-button" aria-expanded="false">
+                <span class="screen-read-only">Otwórz / Zamknij Menu</span>
+                <span class="hamburger-box">
+                    <span class="hamburger-box-line"></span>
+                </span>
+            </button>
+        </div>
+    )
+}
+
+function Nav() {
+    return (
+        <section>           
+            <MobileMenu />
             <div className="menu">
                 <div className="menu-box">
+                    <Hamburger />
                     <div className="menu-title"> <FontAwesomeIcon icon={faMugHot} size="lg"/> Coffee2U </div>
                     <ul className="menu-list">
-                        {Object.keys(objHashLinks).map((v,i)=>(
-                            <li key={i}><a href={v}>{objHashLinks[v]}</a></li>
+                        {Object.keys(objMenuLinks).map((v,i)=>(
+                            <li key={i}><a href={v}>{objMenuLinks[v]}</a></li>
                         ))}  
                     </ul>
                 </div>
