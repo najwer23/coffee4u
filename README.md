@@ -1,4 +1,4 @@
-# coffee2U
+# coffee4U
 Website about coffee &lt;3 
 
 ## Requirements
@@ -7,7 +7,7 @@ Website about coffee &lt;3
 
 ## Instalation
 ```
-git clone https://github.com/najwer23/coffee2U.git
+git clone https://github.com/najwer23/coffee4U.git
 ```
 ## Run in folder client/
 ```
