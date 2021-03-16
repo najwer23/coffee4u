@@ -5,7 +5,7 @@ import '../CSS/Nav.css';
 
 const objMenuLinks = {
     '/': 'Home',
-    '/menu': 'Drinks',
+    '/drinks': 'Drinks',
     '/contact': 'Contact',
     '/gallery': 'Gallery'
 }
