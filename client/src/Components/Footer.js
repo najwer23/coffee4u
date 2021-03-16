@@ -36,7 +36,7 @@ function Footer() {
                     <FontAwesomeIcon icon={faCopyright}  size="1x" /> Mariusz Najwer 2021
                 </div>
                 <div className='foot-item'>
-                    <FontAwesomeIcon icon={faRegistered}  size="1x" /> Coffee2U
+                    <FontAwesomeIcon icon={faRegistered}  size="1x" /> Coffee4U
                 </div>
             </div>
         </div>

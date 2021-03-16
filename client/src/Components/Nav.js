@@ -77,7 +77,7 @@ function Nav() {
             <div className="menu">
                 <div className="menu-box">
                     <Hamburger />
-                    <div className="menu-title"> <FontAwesomeIcon icon={faMugHot} size="lg" /> Coffee2U </div>
+                    <div className="menu-title"> <FontAwesomeIcon icon={faMugHot} size="lg" /> Coffee4U </div>
                     <ul className="menu-list">
                         {Object.keys(objMenuLinks).map((v, i) => (
                             <li key={i}><a href={v}>{objMenuLinks[v]}</a></li>
