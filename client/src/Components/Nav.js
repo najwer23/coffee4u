@@ -48,7 +48,7 @@ class Hamburger extends Component {
         return (
             <div className="hamburger">
                 <button className="hamburger-button" onClick={this.menuMobileClick} aria-expanded="false">
-                    <span className="screen-read-only">Otwórz / Zamknij Menu</span>
+                    <span className="screen-read-only">Open / Close Menu</span>
                     <span className="hamburger-box">
                         <span className="hamburger-box-line"></span>
                     </span>
@@ -60,11 +60,13 @@ class Hamburger extends Component {
 
 function MobileMenu() {
     return (
-        <div className="menu-mobile">
-            <ul className="menuLinks">
+        <div className="menu-mobile">   
+            <ul className="menu-mobile-links">
+                <li>Coffee4U</li>
                 {Object.keys(objMenuLinks).map((v, i) => (
                     <li key={i}><a href={v}>{objMenuLinks[v]}</a></li>
                 ))}
+                <li>Mariusz Najwer <br />2021</li>
             </ul>
         </div>
     )
