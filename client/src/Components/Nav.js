@@ -5,7 +5,7 @@ import '../CSS/Nav.css';
 import { BrowserRouter as Router, Switch, Route, Link, useRouteMatch, useParams} from "react-router-dom";
 import Home from './Home';
 
-const pre = "/coffee4U"; //cuz in gh-pages isnt on main catalogy
+const pre = ""; 
 const objMenuLinks = {
     [pre]: 'Home',
     [`${pre}/drinks`]: 'Drinks',
@@ -80,7 +80,7 @@ class MobileMenu extends Hamburger {
 function Nav() {
     return (
         <>
-            <Router>
+            <Router basename={process.env.PUBLIC_URL}>
                 <MobileMenu />
                 <div className="menu">
                     <div className="menu-box">
@@ -95,7 +95,7 @@ function Nav() {
                 </div>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 150"><path fill="#6F4E37" fillOpacity="1" d="M0,32L80,32C160,32,320,32,480,48C640,64,800,96,960,106.7C1120,117,1280,107,1360,101.3L1440,96L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>   
                 <Switch>
-                    <Route path="/coffee4U/drinks"> 
+                    <Route path="/drinks"> 
                         <Home />
                     </Route>
                 </Switch>
