@@ -14,9 +14,5 @@ git clone https://github.com/najwer23/coffee4u.git
 yarn install
 yarn start
 ```
-## Deploy - Run in folder client/
-```
-yarn run deploy
-``` 
 ## MIT License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
