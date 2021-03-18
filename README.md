@@ -1,4 +1,4 @@
-# coffee4U
+# coffee4u
 Website about coffee &lt;3 
 
 ## Requirements
@@ -7,16 +7,12 @@ Website about coffee &lt;3
 
 ## Instalation
 ```
-git clone https://github.com/najwer23/coffee4U.git
+git clone https://github.com/najwer23/coffee4u.git
 ```
 ## Run in folder client/
 ```
 yarn install
 yarn start
 ```
-## Deploy - Run in folder client/
-```
-yarn run deploy
-``` 
 ## MIT License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
