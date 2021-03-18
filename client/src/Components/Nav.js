@@ -66,7 +66,7 @@ class MobileMenu extends Hamburger {
         return (
             <div className="menu-mobile">   
                 <ul className="menu-mobile-links">
-                    <li>Coffee4U</li>
+                    <li>coffee4u</li>
                     {routes.map((v, i) => <li onClick={this.menuMobileClick} key={i}><Link to={v.path}>{v.name}</Link></li>)}
                     <li>Mariusz Najwer <br />2021</li>
                 </ul>
@@ -84,7 +84,7 @@ function Nav() {
                     <div className="menu">
                         <div className="menu-box">
                             <Hamburger />
-                            <div className="menu-title"> <FontAwesomeIcon icon={faMugHot} size="lg" /> Coffee4U </div>
+                            <div className="menu-title"> <FontAwesomeIcon icon={faMugHot} size="lg" /> coffee4u </div>
                             <ul className="menu-list">
                                 {routes.map((v, i) => <li key={i}><Link to={v.path}>{v.name}</Link></li>)}
                             </ul>
