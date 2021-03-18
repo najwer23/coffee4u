@@ -9,10 +9,11 @@ Website about coffee &lt;3
 ```
 git clone https://github.com/najwer23/coffee4u.git
 ```
-## Run in folder client/
+## Run
 ```
 yarn install
 yarn start
+yarn build
 ```
 ## MIT License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
