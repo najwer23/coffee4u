@@ -13,6 +13,13 @@ body {
     width: 1000px;
 }
 
+.ss h1 {
+    font-weight: 600;
+    font-size: 5rem;
+    padding: 0;
+    margin: 100px 0 50px 0;
+}
+
 .ss2 {
     background-color: #24272b;
     color: white;
@@ -22,17 +29,7 @@ body {
     width: calc(1000px - 240px);
     margin-top: -20px;
     margin-bottom: 75px;
-}
-
-.ss2 { 
     line-height: 140%;
-}
-
-.ss h1 {
-    font-weight: 600;
-    font-size: 5rem;
-    padding: 0;
-    margin: 100px 0 50px 0;
 }
 
 .ss-img {
@@ -93,7 +90,6 @@ body {
 .wave:hover {
     background-position: 0;
 }
-
 
 @media screen and (max-width: 1000px) {
     .ss {

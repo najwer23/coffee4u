@@ -1,43 +1,33 @@
 import '../CSS/Home.css';
-import { Component, useEffect, React } from "react"
-import Masonry from './Masonry';
+import { Component, React } from "react"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
+import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
+
 
 class Home extends Component {
     constructor(props) {
         super(props);
     }
 
-    makeMasonryGridArr() {
-        let masonryGrid;
-        let masonryGridArr = new Array();
-        const masonryGridParams = [
-            {
-                grid: "#m-ad-p",
-                items: ".ad-c",
-                content: ".ad-cc"
-            }
-        ];
-
-        for (let i = 0; i < masonryGridParams.length; i++) {
-            masonryGrid = new Masonry(masonryGridParams[i])
-            masonryGrid.resizeAllGridItems();
-            masonryGridArr.push(masonryGrid);
-        }
-
-        return masonryGridArr
-    }
-
-    componentDidMount() {
-        let masonryGridArr=this.makeMasonryGridArr()
-        window.addEventListener("resize", function () {
-            masonryGridArr.forEach(function (elem) {
-                elem.resizeAllGridItems();
-            });
-        });
-    }
-
     render() {
+
+        let arrCoffee = [
+            "Caffeine blocks an inhibitory neurotransmitter in your brain, which causes a stimulant effect. This improves energy levels, mood and various aspects of brain function."
+            ,"Several studies show that caffeine can increase fat burning and boost your metabolic rate."
+            ,"Caffeine can increase adrenaline levels and release fatty acids from your fat tissues. It also leads to significant improvements in physical performance."
+            ,"Coffee contains several important nutrients, including riboflavin, pantothenic acid, manganese, potassium, magnesium and niacin."
+            ,"Several observational studies show that coffee drinkers have a much lower risk of type 2 diabetes, a serious condition that affects millions of people worldwide."
+            ,"Coffee drinkers have a much lower risk of getting Alzheimer’s disease, which is a leading cause of dementia worldwide."
+            ,"Coffee drinkers have up to a 60% lower risk of getting Parkinson’s disease, the second most common neurodegenerative disorder."
+            ,"Coffee drinkers have a much lower risk of cirrhosis, which can be caused by several diseases that affect the liver."
+            ,"Coffee appears to lower your risk of developing depression and may dramatically reduce suicide risk."
+            ,"Liver and colorectal cancer are the third and fourth leading causes of cancer death worldwide. Coffee drinkers have a lower risk of both.",
+            ,"Coffee may cause mild increases in blood pressure, which usually diminish over time. Coffee drinkers do not have an increased risk of heart disease and have a slightly lower risk of stroke."
+            ,"Several studies show that coffee drinkers live longer and have a lower risk of premature death."
+            ,"Coffee is rich in powerful antioxidants, and many people get more antioxidants from coffee than from fruits and veggies combined."
+        ];
         return (
             <article>
                 <section className="ss">
@@ -61,35 +51,15 @@ class Home extends Component {
 
                 <section className="ss">
                     <div className="ss2">
-                        <h2>Advantages of coffee</h2>
-                        <div id="m-ad-p" className="ad-p">
-                            <div className="ad-c">
-                                <div className="ad-cc">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+                        <h2>Advantages of Coffee</h2>
+                        <Masonry columnsCount={2}>
+                            {arrCoffee.map((v,i)=> ( 
+                                <div className="adv-m-c" key={i.toString()}>
+                                    <FontAwesomeIcon style={{color: "orange"}} icon={faCheck} size="2x" /> <br /><br />
+                                    {v}
                                 </div>
-                            </div>
-                            <div className="ad-c">
-                                <div className="ad-cc">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-
-                                </div>
-                            </div>
-                            <div className="ad-c">
-                                <div className="ad-cc">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-
-                                </div>
-                            </div>
-                            <div className="ad-c">
-                                <div className="ad-cc">
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
-
-                                </div>
-                            </div>
-                        </div>
+                            ))} 
+                        </Masonry>                
                     </div>
                 </section>
 
