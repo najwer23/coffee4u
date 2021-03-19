@@ -2,11 +2,109 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Muli', sans-serif;
-    font-weight: 500;
-    font-size: 16px;
+    font-size: 18px;
+    background-color: #D9D9D9;
+    color: #24272b;
 }
 
-main {
+.ss {
     margin-left: auto;
     margin-right: auto;
+    width: 1000px;
 }
+
+.ss h1 {
+    font-weight: 600;
+    font-size: 5rem;
+    padding: 0;
+    margin: 100px 0 50px 0;
+}
+
+.ss2 {
+    background-color: #24272b;
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    padding: 80px 120px 80px 120px;
+    width: calc(1000px - 240px);
+    margin-top: -20px;
+    margin-bottom: 75px;
+    line-height: 140%;
+}
+
+.ss-img {
+    margin-top: 100px;
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.ss2 a {
+    text-decoration: none;
+}
+
+.ss2 ol {
+    list-style: disc;
+    margin: 0;
+    padding-left: 20px;
+}
+
+
+.btn {   
+    background-color: #24272b;
+    border: 1px solid orange;
+    color: orange;
+    cursor: pointer;
+    align-self: center;
+    text-decoration: none !important;
+    text-align: center;
+    font-weight: 700;
+    display: block;
+    border-radius: 10px;
+}
+
+.btn:focus {
+    color: orange;
+    background-image: linear-gradient(45deg, orange 50%, transparent 50%);
+    outline: 0;
+    border-bottom: 2px solid orange;
+}
+
+.btn:hover, .btn:active {
+    color: white;
+    outline: 0;
+}
+
+.wave {
+    line-height: 50px;
+    height: 50px;
+    width: 250px;
+    border-color: orange;
+    color: orange;
+    background-image: linear-gradient(45deg, orange 50%, transparent 50%);
+    background-position: 100%;
+    background-size: 400%;
+    transition: background 300ms ease-in-out;
+}
+
+.wave:hover {
+    background-position: 0;
+}
+
+@media screen and (max-width: 1000px) {
+    .ss {
+        margin-left: 5%;
+        margin-right: 5%;
+        width: 90%;
+    }
+
+    .ss2 {
+        width: calc(100% - 80px);
+        padding: 40px;
+    }
+
+    .ss-img {
+        margin-top: 50px;
+    }
+   
+  }

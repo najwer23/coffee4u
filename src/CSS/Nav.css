@@ -1,5 +1,5 @@
 .menu {
-    background-color: #6F4E37;
+    background-color: #24272b;
 }
 
 .menu-box {
@@ -28,6 +28,7 @@ nav, .menu-list a {
 .menu-list a:hover {
     color: white;
     text-decoration: underline;
+    text-decoration-color: orange;
 }
 
 .menu-list {
