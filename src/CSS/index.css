@@ -21,6 +21,7 @@ body {
     padding: 80px 120px 80px 120px;
     width: calc(1000px - 240px);
     margin-top: -20px;
+    margin-bottom: 75px;
 }
 
 .ss2 { 
@@ -40,6 +41,53 @@ body {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
+
+.ss2 a {
+    text-decoration: none;
+}
+
+
+.btn {   
+    background-color: #24272b;
+    border: 1px solid orange;
+    color: orange;
+    cursor: pointer;
+    align-self: center;
+    text-decoration: none !important;
+    text-align: center;
+    font-weight: 700;
+    display: block;
+    border-radius: 10px;
+}
+
+.btn:focus {
+    color: orange;
+    background-image: linear-gradient(45deg, orange 50%, transparent 50%);
+    outline: 0;
+    border-bottom: 2px solid orange;
+}
+
+.btn:hover, .btn:active {
+    color: white;
+    outline: 0;
+}
+
+.wave {
+    line-height: 50px;
+    height: 50px;
+    width: 250px;
+    border-color: orange;
+    color: orange;
+    background-image: linear-gradient(45deg, orange 50%, transparent 50%);
+    background-position: 100%;
+    background-size: 400%;
+    transition: background 300ms ease-in-out;
+}
+
+.wave:hover {
+    background-position: 0;
+}
+
 
 @media screen and (max-width: 1000px) {
     .ss {

@@ -2,6 +2,10 @@ import '../CSS/Home.css';
 import Aos from 'aos';
 import "aos/dist/aos.css";
 import { useEffect } from "react"
+import React from 'react';
+import App from '../App';
+import { Link } from 'react-router-dom';
+
 
 function InitAOS () {
     useEffect(() => {
@@ -22,16 +26,21 @@ function Home() {
         <section className="ss">
             <img className="ss-img" src={`${process.env.PUBLIC_URL}/assets/images/h1.jpg`} alt="img about"/>
             <div className="ss2">
-                <h2>What is coffee?!</h2>
-                <p> 
-                    <ol>
-                        <li>Coffee [noun] - a magic potion that allows human muscles to move, especially on Monday mornings.</li>
-                        <li>Coffee [noun] - a dark, magical substance that turns "leave me alone" into "good morning, honey".</li>
-                        <li>Coffee [noun] - nectar of the Gods.</li>
-                        <li>Coffee - Community of Faith for Economic Empowerment</li>
-                    </ol>
-                </p>
+                <h2>What is coffee?!</h2>    
+                <ol>
+                    <li>Coffee [noun] - a magic potion that allows human muscles to move, especially on Monday mornings.</li>
+                    <li>Coffee [noun] - a dark, magical substance that turns "leave me alone" into "good morning, honey".</li>
+                    <li>Coffee [noun] - nectar of the Gods.</li>
+                    <li>Coffee - Community of Faith for Economic Empowerment</li>
+                </ol>
                 <p>We have also boring, formal definition of Coffee <br /><br /> <i><b style={{color: "orange"}} >A hot drink made from the roasted and ground seeds (coffee beans) of a tropical shrub.</b></i></p>
+            </div>
+        </section>
+
+        <section className="ss">
+            <div className="ss2">
+                <h2>What Coffee we offer?</h2>
+                <Link to={"/drinks"} ><div className='btn wave'>Check out for yourself!</div></Link>
             </div>
         </section>
         </article>
