@@ -41,8 +41,8 @@ class Home extends Component {
         return (
             <article>
                 <section className="ss">
-                    <h1 data-aos="fade-right">Life is too short for bad coffee...</h1>
-                    <h2 data-aos="fade-left">...but even a bad cup of coffee is better than no coffee at all.</h2>
+                    <h1>Life is too short for bad coffee...</h1>
+                    <h2>...but even a bad cup of coffee is better than no coffee at all.</h2>
                 </section>
 
                 <section className="ss">
