@@ -46,6 +46,12 @@ body {
     text-decoration: none;
 }
 
+.ss2 ol {
+    list-style: disc;
+    margin: 0;
+    padding-left: 20px;
+}
+
 
 .btn {   
     background-color: #24272b;

@@ -11,5 +11,6 @@
 @media (max-width: 1000px) {
     .ad-p {
         grid-auto-rows: unset;
+        grid-template-columns: repeat(1, 100%);
     }
 }
