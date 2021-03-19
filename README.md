@@ -17,3 +17,8 @@ yarn build
 ```
 ## MIT License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## Deploy on Heroku 
+```
+https://create-react-app.dev/docs/deployment/#notes-on-client-side-routing
+```
