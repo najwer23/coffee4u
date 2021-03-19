@@ -31,7 +31,7 @@ function Home() {
                         <li>Coffee - Community of Faith for Economic Empowerment</li>
                     </ol>
                 </p>
-                <p>We have also boring, formal definition: Coffee - <i><b>a hot drink made from the roasted and ground seeds (coffee beans) of a tropical shrub.</b></i></p>
+                <p>We have also boring, formal definition of Coffee <br /><br /> <i><b style={{color: "orange"}} >A hot drink made from the roasted and ground seeds (coffee beans) of a tropical shrub.</b></i></p>
             </div>
         </section>
         </article>

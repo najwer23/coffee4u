@@ -84,7 +84,7 @@ function Nav() {
                     <div className="menu">
                         <div className="menu-box">
                             <Hamburger />
-                            <div className="menu-title"> <FontAwesomeIcon icon={faMugHot} size="lg" /> coffee4u </div>
+                            <div className="menu-title"> <FontAwesomeIcon style={{color: "orange"}} icon={faMugHot} size="lg" /> coffee4u </div>
                             <ul className="menu-list">
                                 {routes.map((v, i) => <li key={i}><Link to={v.path}>{v.name}</Link></li>)}
                             </ul>

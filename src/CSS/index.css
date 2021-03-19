@@ -49,8 +49,8 @@ body {
     }
 
     .ss2 {
-        width: calc(100% - 40px);
-        padding: 20px;
+        width: calc(100% - 80px);
+        padding: 40px;
     }
 
     .ss-img {
