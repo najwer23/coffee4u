@@ -16,24 +16,62 @@ class Drinks extends Component {
             cost: "0 zł"
         } 
         window.scrollTo(0, 0);
-
     }
 
-    toggleClickedMenuItem(i,price) {
-        let isState = (this.state.menuObj[i] === undefined); 
+    calculateCost() {
+        return this.state.menuObj.map((v,index) => this.state.menuObj[index].active ? (v.numberOf * v.price) : 0).reduce((a,b)=>a+b,0)
+    }
 
-        this.state.menuObj[i] = {
-            active: isState ? true : !this.state.menuObj[i].active, 
-            bgColor: isState ? this.bgColorActive : this.state.menuObj[i].active ? this.bgColorDeActive : this.bgColorActive ,
-            price: +price.match(/[0-9]+[.][0-9]+/g)[0]
+    toggleClickedMenuItem(index,price) {
+        let isState = (this.state.menuObj[index] === undefined); 
+        price = +price.match(/[0-9]+[.][0-9]+/g)[0];
+
+        if (isState) {
+            this.state.menuObj[index] = {
+                active: true,
+                bgColor: this.bgColorActive,
+                price: price,
+                numberOf: 1
+            }
         }
 
-        this.state.cost = this.state.menuObj.map((v,i) => this.state.menuObj[i].active ? v.price : 0).reduce((a,b)=>a+b,0)
+        if (!isState) {
+            this.state.menuObj[index]["active"] = !this.state.menuObj[index].active
+            this.state.menuObj[index]["price"] = price
+            this.state.menuObj[index]["numberOf"] = !this.state.menuObj[index].active ? 1 : this.state.menuObj[index].numberOf
+            this.state.menuObj[index]["bgColor"] = !this.state.menuObj[index].active ? this.bgColorDeActive : this.bgColorActive
+        }
 
+        this.state.cost = this.calculateCost() 
         this.setState({
             menuObj: this.state.menuObj,
             cost: this.state.cost.toFixed(2) + " zł"
         }); 
+
+        console.log(this.state)
+    }
+
+    addItem(index) {
+        let isState = (this.state.menuObj[index] === undefined); 
+        
+        if (isState) {
+            this.state.menuObj[index] = {
+                numberOf: 1, 
+            }
+        }
+        if (!isState) {
+            this.state.menuObj[index]["numberOf"] = this.state.menuObj[index].numberOf + 1;
+        }
+
+        this.state.cost = this.calculateCost() 
+
+        this.setState({
+            menuObj: this.state.menuObj,
+            cost: this.state.cost.toFixed(2) + " zł"
+        });
+        
+        console.log("add")
+        console.log(index)
         console.log(this.state)
     }
 
@@ -71,30 +109,37 @@ class Drinks extends Component {
                         <h3>Price: {this.state.cost}</h3>
                         <ResponsiveMasonry columnsCountBreakPoints={{300: 1}}>
                             <Masonry columnsCount={1}>
-                                {arrDefCoffee.map((v,i)=> (
-                                <>
+                                {arrDefCoffee.map((v,index)=> (
+                                <section key={v.id}>
                                 <div className="m-i" 
                                     style={{backgroundColor: (this.state.menuObj[v.id]) == undefined ? "" : this.state.menuObj[v.id].bgColor}} 
                                     onClick={(e) => this.toggleClickedMenuItem(v.id,v.price)}
-                                    key={v.id}
                                 >
                                 <div>{v.name}</div>
-                                <div>{v.price}</div>
-                                    
+                                <div>{v.price}</div>     
                                 </div>
                                                                     
-                                <div className="menuBtn">
+                                <div className="menuBtn"
+                                    //  style={{display: "none"}}
+                                    >
                                     <div className="nr">
-                                        1
+                                        {this.state.menuObj[v.id] == undefined ? 0 : this.state.menuObj[v.id].numberOf}
                                     </div>
-                                    <div>
+                                    
+                                    <div
+                                        style={{cursor: "pointer"}}
+                                        onClick={(e) => this.addItem(v.id)}
+                                    >
                                         <FontAwesomeIcon style={{color: "orange"}} icon={faPlusCircle} size="2x" />
                                     </div>
-                                    <div>
+                                        
+                                    <div
+                                       style={{cursor: "pointer"}}
+                                    >
                                         <FontAwesomeIcon style={{color: "orange"}} icon={faMinusCircle} size="2x" />
                                     </div>
                                 </div>
-                                </>
+                                </section>
 
                                 ))} 
                                 
