@@ -36,8 +36,8 @@ class Home extends Component {
         return (
             <article>
                 <section className="ss">
-                    <h1>Life is too short for bad coffee...</h1>
-                    <h2>...but even a bad cup of coffee is better than no coffee at all.</h2>
+                    <h1 data-aos="fade-up">Life is too short for bad coffee...</h1>
+                    <h2 data-aos="fade-up">...but even a bad cup of coffee is better than no coffee at all.</h2>
                 </section>
 
                 <section className="ss">
@@ -46,7 +46,7 @@ class Home extends Component {
                         <h2>What is coffee?!</h2>
                         <ResponsiveMasonry columnsCountBreakPoints={{300: 1, 500: 2}}>
                             <Masonry columnsCount={2}>
-                                {arrDefCoffee.map((v,i)=> (<div className="adv-m-c" key={i.toString()}>{v} </div>))} 
+                                {arrDefCoffee.map((v,i)=> (<div data-aos="fade-up" className="adv-m-c" key={i.toString()}>{v} </div>))} 
                             </Masonry>  
                         </ResponsiveMasonry>                         
                         <p>We have also boring, formal definition of Coffee <br /><br /> <i><b style={{ color: "orange" }} >A hot drink made from the roasted and ground seeds (coffee beans) of a tropical shrub.</b></i></p>
@@ -59,7 +59,7 @@ class Home extends Component {
                         <ResponsiveMasonry columnsCountBreakPoints={{300: 1, 500: 2}}>
                             <Masonry columnsCount={1}>
                                 {arrCoffee.map((v,i)=> ( 
-                                    <div className="adv-m-c" key={i.toString()}>
+                                    <div data-aos="fade-up" className="adv-m-c" key={i.toString()}>
                                         <FontAwesomeIcon style={{color: "orange"}} icon={faCheck} size="2x" /> <br /><br />
                                         {v}
                                     </div>
