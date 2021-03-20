@@ -118,8 +118,8 @@ class Drinks extends Component {
             <article>
                 <section className="ss">
                     <div className="ss2">
-                        <h2>Menu</h2>
-                        <p>(Check price by select drink!)</p>
+                        <h2 style={{textAlign: "center"}}>MENU</h2>
+                        <p  style={{textAlign: "center"}}>Select drinks!</p>
                         <h3>Price: {this.state.cost}</h3>
                         <ResponsiveMasonry columnsCountBreakPoints={{300: 1}}>
                             <Masonry columnsCount={1}>
@@ -130,21 +130,14 @@ class Drinks extends Component {
                                     onClick={(e) => this.toggleClickedMenuItem(v.id,v.price)}
                                 >
                                 <div>{v.name}</div>
-                                <div>{v.price}</div>     
+                                <div style={{fontSize: "14px"}}>{v.price}</div>     
                                 </div>
                                                                     
                                 <div className="menuBtn"
-                                    //  style={{display: "none"}}
+                                    style={{display: this.state.menuObj[v.id] == undefined ? "none" : this.state.menuObj[v.id].active ? "flex": "none"}}
                                     >
                                     <div className="nr">
                                         {this.state.menuObj[v.id] == undefined ? 1 : this.state.menuObj[v.id].numberOf}
-                                    </div>
-                                    
-                                    <div
-                                        style={{cursor: "pointer"}}
-                                        onClick={(e) => this.addItem(v.id)}
-                                    >
-                                        <FontAwesomeIcon style={{color: "orange"}} icon={faPlusCircle} size="2x" />
                                     </div>
                                         
                                     <div
@@ -152,6 +145,13 @@ class Drinks extends Component {
                                        onClick={(e) => this.minusItem(v.id)}
                                     >
                                         <FontAwesomeIcon style={{color: "orange"}} icon={faMinusCircle} size="2x" />
+                                    </div>
+
+                                    <div
+                                        style={{cursor: "pointer"}}
+                                        onClick={(e) => this.addItem(v.id)}
+                                    >
+                                        <FontAwesomeIcon style={{color: "orange"}} icon={faPlusCircle} size="2x" />
                                     </div>
                                 </div>
                                 </section>
