@@ -47,8 +47,6 @@ class Drinks extends Component {
             menuObj: this.state.menuObj,
             cost: this.state.cost.toFixed(2) + " zł"
         }); 
-
-        console.log(this.state)
     }
 
     addItem(index) {
@@ -69,10 +67,6 @@ class Drinks extends Component {
             menuObj: this.state.menuObj,
             cost: this.state.cost.toFixed(2) + " zł"
         });
-        
-        console.log("add")
-        console.log(index)
-        console.log(this.state)
     }
 
     render() {
@@ -123,7 +117,7 @@ class Drinks extends Component {
                                     //  style={{display: "none"}}
                                     >
                                     <div className="nr">
-                                        {this.state.menuObj[v.id] == undefined ? 0 : this.state.menuObj[v.id].numberOf}
+                                        {this.state.menuObj[v.id] == undefined ? 1 : this.state.menuObj[v.id].numberOf}
                                     </div>
                                     
                                     <div
