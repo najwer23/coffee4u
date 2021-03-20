@@ -8,16 +8,14 @@ body {
 }
 
 .ss {
-    margin-left: auto;
-    margin-right: auto;
     width: 1000px;
+    margin: 100px auto 50px auto;
 }
 
 .ss h1 {
     font-weight: 600;
     font-size: 5rem;
     padding: 0;
-    margin: 100px 0 50px 0;
 }
 
 .ss2 {
