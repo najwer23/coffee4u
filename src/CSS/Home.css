@@ -5,3 +5,8 @@
     padding: 15px;
     margin:10px
 }
+
+audio {
+    margin-top: 20px;
+    width: 100%;
+}
