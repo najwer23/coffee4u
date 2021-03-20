@@ -1,0 +1,35 @@
+.m-i, .menuOrder {
+    display: flex;
+    justify-content: space-between;
+}
+
+.m-i:hover {
+    cursor: pointer;
+}
+
+.menuBtn {
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: 10px;
+    margin-bottom: 50px;
+}
+
+.nr {
+    line-height: 40px;
+}
+
+.m-i {
+    background-color: #343E42;
+    text-align: left;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+}
+
+.descCoffe {
+    font-weight: 200;
+    font-size: 16px;
+    margin-bottom: 10px;
+}

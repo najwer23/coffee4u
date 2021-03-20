@@ -9,6 +9,7 @@ import Masonry, {ResponsiveMasonry} from "react-responsive-masonry"
 class Home extends Component {
     constructor(props) {
         super(props);
+        window.scrollTo(0, 0);
     }
 
     render() {
@@ -72,10 +73,22 @@ class Home extends Component {
 
                 <section className="ss">
                     <div className="ss2">
+                        <h2>Do you know what coffee smells like?</h2>
+                        <a href="https://youtu.be/5R3WdBE1-JM" target="_blank" style={{color: "white"}}>The smell of coffee - 6 Minute English (BBC Learning English) </a>
+                        <audio controls>
+                            <source src={`${process.env.PUBLIC_URL}/assets/audio/bbc.mp3`} type="audio/mp3" />
+                        </audio>
+                    </div>
+                </section>
+
+                <section className="ss">
+                    <div className="ss2">
                         <h2>What Coffee we offer?</h2>
                         <Link to={"/drinks"} ><div className='btn wave'>Check out for yourself!</div></Link>
                     </div>
                 </section>
+
+
             </article>
         )
     }
