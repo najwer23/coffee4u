@@ -69,6 +69,26 @@ class Drinks extends Component {
         });
     }
 
+    minusItem(index) {
+        let isState = (this.state.menuObj[index] === undefined); 
+        
+        if (isState) {
+            this.state.menuObj[index] = {
+                numberOf: 1, 
+            }
+        }
+        if (!isState) {
+            this.state.menuObj[index]["numberOf"] = this.state.menuObj[index].numberOf > 1 ? this.state.menuObj[index].numberOf- 1 : 1;
+        }
+
+        this.state.cost = this.calculateCost() 
+
+        this.setState({
+            menuObj: this.state.menuObj,
+            cost: this.state.cost.toFixed(2) + " zł"
+        });
+    }
+
     render() {
 
         let arrDefCoffee = [
@@ -129,6 +149,7 @@ class Drinks extends Component {
                                         
                                     <div
                                        style={{cursor: "pointer"}}
+                                       onClick={(e) => this.minusItem(v.id)}
                                     >
                                         <FontAwesomeIcon style={{color: "orange"}} icon={faMinusCircle} size="2x" />
                                     </div>
