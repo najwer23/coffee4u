@@ -39,7 +39,7 @@ class Contact extends Component {
                         <ResponsiveMasonry columnsCountBreakPoints={{300: 1, 500: 2}}>
                             <Masonry columnsCount={2}>
                                 {contactInfo.map(v=> (
-                                    <div className="adv-m-c"> <span style={{color: "orange"}}>{v.name}</span> <br /><br /> {v.desc} </div>
+                                    <div data-aos="fade-up" className="adv-m-c"> <span style={{color: "orange"}}>{v.name}</span> <br /><br /> {v.desc} </div>
                                 ))}
                                
                             </Masonry>  
