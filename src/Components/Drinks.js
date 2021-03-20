@@ -3,6 +3,7 @@ import { Component, React } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusCircle, faMinusCircle } from '@fortawesome/free-solid-svg-icons'
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
+import { Link } from 'react-router-dom';
 
 
 class Drinks extends Component {
@@ -182,6 +183,13 @@ class Drinks extends Component {
 
                         <h3 className="menuOrder"> <span>Price:</span> <span style={{ fontSize: "30px" }}>{this.state.cost}</span></h3>
 
+                    </div>
+                </section>
+
+                <section className="ss">
+                    <div className="ss2">
+                        <h2>Visit Us!</h2>
+                        <Link to={"/contact"} ><div className='btn wave'>Find where!</div></Link>
                     </div>
                 </section>
             </article>
